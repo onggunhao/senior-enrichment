@@ -2,7 +2,7 @@
 var Sequelize = require('sequelize')
 var db = require('../index.js')
 
-module.exports = db.define('student', {
+const Student = module.exports = db.define('student', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
