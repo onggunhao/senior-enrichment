@@ -5,12 +5,12 @@ var db = require('../index')
 module.exports = db.define('student', {
   name: {
     type: Sequelize.STRING,
-    // allowNull: false
+    allowNull: false
   },
   email: {
     type: Sequelize.STRING,
-    // validate: {
-    //   isEmail: true
-    // }
+    validate: {
+      isEmail: true
+    }
   }
 })
