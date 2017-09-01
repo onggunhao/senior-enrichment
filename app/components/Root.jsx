@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom'
+// import { Route, Switch, Redirect } from 'react-router-dom'
 
 // Importing sub-components
-// Students
 import StudentsListContainer from './StudentsList'
-// Campuses
 import CampusesListContainer from './CampusesList'
-
+// import NewStudent from './NewStudent'
 
 // Importing store methods for container component
 import store, { fetchStudents, fetchCampuses } from '../store'
 
 export default class Root extends Component {
-  
+
   componentDidMount() {
     const campusesThunk = fetchCampuses();
     const studentsThunk = fetchStudents();

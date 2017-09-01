@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 function CampusCard(props) {
   const { name, id, imageUrl, numStudents } = props
-  console.log(props)
 
   return (
     <div className="campus-card">
