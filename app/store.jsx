@@ -1,6 +1,30 @@
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
+import { 
+  createStore, 
+  applyMiddleware,
+  combineReducers
+} from 'redux';
 import createLogger from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
 import thunkMiddleware from 'redux-thunk'; // https://github.com/gaearon/redux-thunk
 
-export default createStore(rootReducer, applyMiddleware(thunkMiddleware, createLogger()))
+// Import sub-reducers
+import students from './reducers/students'
+import campuses from './reducers/campuses'
+
+const reducer = combineReducers({
+  students,
+  campuses
+});
+
+ const store = createStore(
+  reducer,
+  applyMiddleware(
+    thunkMiddleware, 
+    createLogger()
+  )
+);
+
+export default store;
+
+// Export action creators
+export * from './reducers/students'
+export * from './reducers/campuses'
