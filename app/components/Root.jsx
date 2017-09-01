@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 // Importing sub-components
-import NavBar from './NavBar'
 // Students
-import StudentsList from './Students/StudentsList'
+import StudentsListContainer from './StudentsList'
 // Campuses
-import CampusesList from './Campuses/CampusesList'
+import CampusesListContainer from './CampusesList'
 
 
 // Importing store methods for container component
@@ -25,9 +24,9 @@ export default class Root extends Component {
     return (
       <div className="page-content-wrapper">
         <div className="content sm-gutter">
-          <div className="container-fluid padding-25 sm-padding-10">
-            <CampusesList />
-            <StudentsList />
+          <div className="container-fluid padding-25 sm-padding-10 display-flex">
+            <CampusesListContainer />
+            <StudentsListContainer />
           </div>
         </div>
       </div>

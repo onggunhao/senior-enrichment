@@ -10,7 +10,7 @@ import Root from './components/Root'
 render (
   <Provider store={store}>
     <Router>
-      <Root />
+    <Root />
     </Router>
   </Provider>,
   document.getElementById('main')
