@@ -4,13 +4,9 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 // Importing sub-components
 import NavBar from './NavBar'
 // Students
-import StudentsList from './StudentsList'
-import Student from './Student'
-import NewStudent from './NewStudent'
+import StudentsList from './Students/StudentsList'
 // Campuses
-import CampusesList from './CampusesList'
-import Campus from './Campus'
-import NewCampus from './NewCampus'
+import CampusesList from './Campuses/CampusesList'
 
 
 // Importing store methods for container component
@@ -27,21 +23,14 @@ export default class Root extends Component {
 
   render() {
     return (
-      <div></div>
-      // <div>
-      //   <NavBar />
-      //   <div className='container app'>
-      //     <Switch>
-      //       <Route exact path="/students" component={StudentsList}/>
-      //       <Route path="/students/:studentId" component={Student}/>
-      //       <Route path="/students/new" component={NewStudent}/>
-      //       <Route exact path="/campuses" component={CampusesList}/>
-      //       <Route path="/campuses/:campusId" component={Campus}/>
-      //       <Route path="/campuses/new" component={NewCampus}/>
-      //       <Redirect to="/campuses" />
-      //     </Switch>
-      //   </div>
-      // </div>
+      <div className="page-content-wrapper">
+        <div className="content sm-gutter">
+          <div className="container-fluid padding-25 sm-padding-10">
+            <CampusesList />
+            <StudentsList />
+          </div>
+        </div>
+      </div>
     )
   }
 }

@@ -3,3 +3,14 @@
 * Override Pages default styles or create your own styles here
 
 */
+.campus-card-background-image {
+  background-size:100%;
+}
+
+.campus-card-background-overlay {
+  background:rgba(87, 87, 87, 0.9);
+}
+
+.active .campus-card-background-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
