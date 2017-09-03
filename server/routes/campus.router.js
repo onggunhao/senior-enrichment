@@ -12,7 +12,9 @@ router.get('/', (req, res, next) => {
 
 // GET api/campuses/:campusId
 router.get('/:campusId', (req, res, next) => {
-  Campus.findById(req.params.campusId)
+  Campus.findById(req.params.campusId, {
+    include: [{all:true}]
+  })
     .then(campus => res.json(campus))
     .catch(next)
 })

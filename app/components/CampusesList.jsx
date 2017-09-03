@@ -71,6 +71,8 @@ function CampusesListContainer(props) {
 }
 
 const mapStateToProps = function (state) {
+
+  const activeCampus = Number(ownProps.match.params.campusId);
   return {
     campuses: state.campuses,
     students: state.students

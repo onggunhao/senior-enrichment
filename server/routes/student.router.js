@@ -5,14 +5,18 @@ module.exports = router
 
 // GET api/students
 router.get('/', (req, res, next) => {
-  Student.findAll()
+  Student.findAll({
+    include: [{all:true}]
+  })
     .then(students => res.json(students))
     .catch(next);
 })
 
 // GET api/students/:studentId
 router.get('/:studentId', (req, res, next) => {
-  Student.findById(req.params.studentId)
+  Student.findById(req.params.studentId, {
+    include: [{all:true}]
+  })
     .then(student => res.json(student))
     .catch(next)
 })

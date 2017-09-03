@@ -12,10 +12,10 @@ function Table(props) {
       <thead>
         <tr>
           <th width="10%">ID</th>
-          <th width="20%">Name</th>
-          <th width="40%">Email</th>
-          <th width="20%">Campus</th>
-          <th width="10%"></th>
+          <th width="30%">Name</th>
+          <th width="30%">Email</th>
+          <th width="18%">Campus</th>
+          <th width="12%"></th>
         </tr>
       </thead>
       <tbody>
