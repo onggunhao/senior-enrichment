@@ -38,6 +38,7 @@ export function postStudent (student, history) {
     return axios.post('/api/students', student)
       .then(res => res.data)
       .then(student => {
+        console.log(student)
         dispatch(getStudent(student))
       })
   }
@@ -62,7 +63,7 @@ export default function reducer (state=[], action) {
       return action.students;
 
     case GET_STUDENT:
-      return [...state, action.student];
+      return [action.student, ...state];
 
     case REMOVE_STUDENT:
       return [...state].filter(student => student.id !== action.student.id)

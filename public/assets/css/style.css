@@ -22,3 +22,16 @@
 .active .campus-card-background-overlay {
   background:rgba(255, 65, 65, 0.85);
 }
+
+.sm-gutter .row {
+  margin-left:0px;
+  margin-right:0px;
+}
+
+.addStudentButtonContainerDiv {
+  text-align:center
+}
+
+.addStudentButton {
+  width:90%;
+}

@@ -24,7 +24,12 @@ router.get('/:studentId', (req, res, next) => {
 // POST api/students
 router.post('/', (req, res, next) => {
   Student.create(req.body)
-    .then(student => res.json(student))
+    .then(student => {
+      return Student.findById(parseInt(student.id), {
+        include: [{all: true}]
+      })
+    })
+    .then(newStudent => res.json(newStudent))
     .catch(next)
 })
 

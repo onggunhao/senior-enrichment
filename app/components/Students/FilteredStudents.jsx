@@ -28,7 +28,9 @@ const mapStateToProps = (state, ownProps) => {
   return {
     activeCampus: state.campuses.find(campus => campus.id === campusId) || { name: 'All Campuses' },
     students: students,
-    numStudents: students.length
+    numStudents: students.length,
+    showAddStudentButton: true,
+    showAddStudentForm: state.showAddStudentForm
   }
 }
 
