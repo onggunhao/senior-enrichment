@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 // Components
 import StudentList from './StudentList'
 
-function AllStudentsList (props) {
+class AllStudentsList extends Component {
 
-  const { activeCampusName, numStudents, students} = props
+  componentDidMount() {
+    this.props.changeCampus({ name: 'All Campuses'})
+  }
 
-  return (
-    <StudentList {...props} />
-  )
+  render() {
+    return (
+      <StudentList {...this.props} />
+    )
+  }
 }
 
 // React-Redux
 import { connect } from 'react-redux'
+import { changeCampus } from '../../store'
 
 const mapStateToProps = (state, ownProps) => {
   return {
     students: state.students,
     numStudents: state.students.length,
-    activeCampusName: 'All Campuses'
+    activeCampus: state.activeCampus
   }
 }
 
-export default connect(mapStateToProps)(AllStudentsList)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeCampus(newCampusName) {
+      dispatch(changeCampus(newCampusName));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllStudentsList)

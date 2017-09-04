@@ -1,15 +1,15 @@
 import React from 'react';
+import IndividualStudent from './IndividualStudent'
 
 function StudentList(props) {
 
-  const { students, activeCampusName, numStudents } = props
-  console.log(props)
+  const { students, activeCampus, numStudents } = props
 
   return (
     <div className="widget-11-2 card no-border card-condensed no-margin widget-loader-circle full-height d-flex flex-column">
     <div className="padding-25">
       <div className="pull-left">
-        <h2 className="text-danger">{activeCampusName}</h2>
+        <h2 className="text-danger">{activeCampus.name}</h2>
         <p className="p-l-5">{numStudents} Students</p>
       </div>
       <h3 className="pull-right semi-bold">
@@ -29,21 +29,7 @@ function StudentList(props) {
       </thead>
       <tbody>
         {
-          students.map((student) => {
-            return (
-              <tr key={student.id}>
-                <td className="v-align-middle semi-bold">{student.id}</td>
-                <td className="v-align-middle">{student.name}</td>
-                <td className="v-align-middle semi-bold">{student.email}</td>
-                <td className="v-align-middle semi-bold">{student.campus.name}</td>
-                <td className="v-align-middle semi-bold">
-                  <button className="btn btn-danger">
-                    <i className="fa fa-trash-o"></i>
-                  </button>
-                </td>
-              </tr>
-            )
-          })
+          students.map((student) => <IndividualStudent key={student.id} student={student}/>)
         }
 
       </tbody>

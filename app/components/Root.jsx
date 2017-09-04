@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 
 // Importing sub-components
 import AllStudentsList from './Students/AllStudentsList'
+import FilteredStudentsList from './Students/FilteredStudents'
 
 
 import CampusesListNavBar from './Campus/CampusesList'
@@ -29,6 +30,7 @@ export default class Root extends Component {
             <div className="col-lg-8">
               <Switch>
                 <Route exact path="/" component={AllStudentsList} />
+                <Route path="/campuses/:campusId" component={FilteredStudentsList} />
               </Switch>
             </div>
           </div>

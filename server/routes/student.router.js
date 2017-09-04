@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 
 // GET api/students/:studentId
 router.get('/:studentId', (req, res, next) => {
-  Student.findById(req.params.studentId, {
+  Student.findById(parseInt(req.params.studentId), {
     include: [{all:true}]
   })
     .then(student => res.json(student))
@@ -30,7 +30,7 @@ router.post('/', (req, res, next) => {
 
 // PUT api/students/:studentId
 router.put('/:studentId', (req, res, next) => {
-  Student.findById(req.params.studentId)
+  Student.findById(parseInt(req.params.studentId))
     .then(student => student.update(req.body))
     .then(updated => res.json(updated))
     .catch(next)
@@ -38,7 +38,7 @@ router.put('/:studentId', (req, res, next) => {
 
 // DELETE api/student/:studentId
 router.delete('/:studentId', (req, res, next) => {
-  Student.findById(req.params.studentId)
+  Student.findById(parseInt(req.params.studentId))
     .then(student => student.destroy())
     .then(destroyed => res.json(destroyed))
     .catch(next)
