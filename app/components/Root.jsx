@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-// import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 // Importing sub-components
-import StudentsListContainer from './StudentsList'
-import CampusesListContainer from './CampusesList'
+import AllStudentsList from './Students/AllStudentsList'
+
+
+import CampusesListNavBar from './Campus/CampusesList'
 // import NewStudent from './NewStudent'
 
 // Importing store methods for container component
@@ -23,8 +25,12 @@ export default class Root extends Component {
       <div className="page-content-wrapper">
         <div className="content sm-gutter">
           <div className="container-fluid padding-25 sm-padding-10 display-flex">
-            <CampusesListContainer />
-            <StudentsListContainer />
+            <CampusesListNavBar />
+            <div className="col-lg-8">
+              <Switch>
+                <Route exact path="/" component={AllStudentsList} />
+              </Switch>
+            </div>
           </div>
         </div>
       </div>

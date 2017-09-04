@@ -8,6 +8,5 @@ const db = require('../db')
 
 api.use('/students', require('./routes/student.router'));
 api.use('/campuses', require('./routes/campus.router'));
-// api.use('/users', require('./routes/user.router'));
 
 module.exports = api

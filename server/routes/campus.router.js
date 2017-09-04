@@ -5,7 +5,9 @@ module.exports = router
 
 // GET api/campuses
 router.get('/', (req, res, next) => {
-  Campus.findAll()
+  Campus.findAll({
+    include: [{all:true}]
+  })
     .then(campuses => res.json(campuses))
     .catch(next);
 })
