@@ -45,8 +45,6 @@ export function postStudent (student, history) {
 
 export function deleteStudent (student) {
   return function thunk (dispatch) {
-    console.log("THUNK FUNCTION")
-    console.log(student)
     return axios.delete(`/api/students/${student.id}'`)
       .then(res => {
         console.log(res)

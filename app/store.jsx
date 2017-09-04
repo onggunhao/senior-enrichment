@@ -10,11 +10,13 @@ import thunkMiddleware from 'redux-thunk'; // https://github.com/gaearon/redux-t
 import students from './reducers/students'
 import campuses from './reducers/campuses'
 import activeCampus from './reducers/activeCampus'
+import showAddStudent from './reducers/showAddStudent'
 
 const reducer = combineReducers({
   students,
   campuses,
-  activeCampus
+  activeCampus,
+  showAddStudent
 });
 
  const store = createStore(
@@ -31,3 +33,4 @@ export default store;
 export * from './reducers/students'
 export * from './reducers/campuses'
 export * from './reducers/activeCampus'
+export * from './reducers/showAddStudent'
